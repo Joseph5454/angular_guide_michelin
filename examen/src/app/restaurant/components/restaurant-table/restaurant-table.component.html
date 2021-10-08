@@ -1,0 +1,24 @@
+<h2>Liste des restaurants</h2>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Adresse</th>
+    <th>Evaluateur</th>
+    <th>Evaluateur</th>
+    <th>Etoiles</th>
+    <th>Etoiles</th>
+    <th>Commentaires</th>
+    <th>Commentaires</th>
+  </tr>
+  <!-- Cas particulier ici : let i = index permet de récupérer l'index de l'élément courant dans la liste.
+       Par exemple, si c'est le premier element, i vaudra 0, si c'est le deuxième, il vaudra 1, etc... -->
+  <tr *ngFor="let restaurant of restaurants; let i = index" [appTableColoration]="i">
+    <td>{{restaurant.id}}</td>
+    <td>{{restaurant.nom}}</td>
+    <td>{{restaurant.adresse}}</td>
+    <td *ngFor="let commentaire of restaurant.evaluations">{{commentaire.evaluateur}}</td>
+    <td *ngFor="let commentaire of restaurant.evaluations">{{commentaire.etoiles}}</td>
+    <td *ngFor="let commentaire of restaurant.evaluations">{{commentaire.commentaire}}</td>
+  </tr>
+</table>
